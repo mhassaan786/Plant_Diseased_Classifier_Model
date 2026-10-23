@@ -1,0 +1,15 @@
+
+PLANT DISEASED CLASSIFIER:  It is a ML model, a classifier based on Convolution Neural Network (CNN). This model is a tunned version of MobileNetV2.
+
+How I Tunned It:
+    1. Freeze only earlier layers from learning and let the last layers to learn.
+    2. Make BatchNormalized layers untrainable
+    3. Data Augmentation (My fav). 'Different Versions ~ flip, rotate, zoom'
+
+This entire model is trained / tunned on a google colab. It's GPU process whole stages and train so fast.
+
+How To Use / Run it:
+    1. Upload Datasets (Dataset + Testset) onto Google Drive.
+    2. Name the folder Plant_Disease_Model and save into it.
+    3. Then Copy / Paste code or upload 'main_model' file on google colab and run each cell sequentially.
+    4. At last just live your app on streamlit and start serving your app.
