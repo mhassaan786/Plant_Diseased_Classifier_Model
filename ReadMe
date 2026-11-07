@@ -9,7 +9,16 @@ How I Tunned It:
 This entire model is trained / tunned on a google colab. It's GPU process whole stages and train so fast.
 
 How To Use / Run it:
-    1. Upload Datasets (Dataset + Testset) onto Google Drive.
-    2. Name the folder Plant_Disease_Model and save into it.
+
+    Don't forget to install all packages first:
+        run: pip install pillow transformers tensorflow numpy streamlit torch
+
+    1. Upload Datasets (Trainset.zip & Testset.zip) onto Google Drive.
+    2. Name the folder Plant_Disease_Model and save both into it.
     3. Then Copy / Paste code or upload 'main_model' file on google colab and run each cell sequentially.
-    4. At last just live your app on streamlit and start serving your app.
+    4. When you run last cell of main_model file, you will get a 'plant_disease_model.keras'. 
+    5. Drop it down to your root directory, where you will will clone / pull all the files in that repo.
+    6. Finally, just live your app on streamlit and start serving your app.
+
+Command to live / run the app: [streamlit run app.py]
+***note: this will take some time when you start for first time...
