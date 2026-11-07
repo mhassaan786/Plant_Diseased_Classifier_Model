@@ -87,9 +87,13 @@ if camera_image is not None:
         st.subheader("Model Prediction: ")
         
         # decode
-        k = int(np.argmax(pred))      # position of the largest number
-        
-        st.info(f"{icons[k]} {class_names[k]}")
+        k = int(np.argmax(pred))    # position of the largest number
+        conf = float(pred[k])       # confidence
+
+        if conf < 0.7:
+            st.warning(f"🤔 Uncertain (Best guess: {class_names[k]}, {conf:.0%}) ")
+        else:
+            st.info(f"{icons[k]} {class_names[k]} ({conf:.0%})")
         
     else:
         st.error("[BLOCKED] Please provide leaf image!")
