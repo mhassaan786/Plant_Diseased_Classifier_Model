@@ -17,12 +17,21 @@ def load_clip():
 # Load Hugging Face model
 clip = load_clip()
 
-def SanityCheck(image):
-#   image = img.convert("RGB")
-  check = clip(image, candidate_labels=["leaf", "not_a_leaf"])
-  prediction = check[0]["label"]
+def SanityCheck(image, threshold=0.40):
 
-  if prediction == "leaf":
-    return 0
-  else:
+    labels=[
+        "a close-up photograph of a plant leaf", 
+        "a photograph of something that is not a plant leaf"
+        ]
+  
+    check = clip(image, candidate_labels=labels)
+
+    leaf_score = next(
+        r["score"] for r in check
+        if r["label"] == labels[0]
+    )
+
+    if leaf_score >= threshold:
+        return 0
+
     return 1

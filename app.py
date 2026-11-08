@@ -9,7 +9,7 @@ from PIL import Image
 from sanity_check import SanityCheck
 
 # page configuration
-st.set_page_config(page_title="Plant Disease Classifier")
+st.set_page_config(page_title="Plant Disease Classifier", page_icon="web_icon.jpg")
 st.title("WELCOME TO PLANT DISEASE CLASSIFIER.")
 st.caption("AI-powered plant leaf disease detection for tomato and bell pepper")
 st.markdown("""
