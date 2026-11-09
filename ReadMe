@@ -1,5 +1,6 @@
 
-PLANT DISEASED CLASSIFIER:  It is a ML model, a classifier based on Convolution Neural Network (CNN). This model is a tunned version of MobileNetV2.
+🌿 Plant Disease Classifier
+An AI-powered application that detects plant diseases from leaf images using deep learning. Upload a leaf image and get an instant disease prediction to help protect your plants.
 
 How I Tunned It:
     1. Freeze only earlier layers from learning and let the last layers to learn.
@@ -9,13 +10,13 @@ How I Tunned It:
 This entire model is trained / tunned on a google colab. It's GPU process whole stages and train so fast.
 
 How To Use / Run it:
-
     Don't forget to install all packages first:
         run: pip install pillow transformers tensorflow numpy streamlit torch
 
     1. Upload Datasets (Trainset.zip & Testset.zip) onto Google Drive.
     2. Name the folder Plant_Disease_Model and save both into it.
-    3. Then Copy / Paste code or upload 'main_model' file on google colab and run each cell sequentially.
+    3. Then Copy / Paste code or upload 'main_model' file [find at /COLAB/] on google colab and run each cell sequentially.
+    5. You can run other files in COLAB folder, i.e sanity checker or un-tunned model 
     4. When you run last cell of main_model file, you will get a 'plant_disease_model.keras'. 
     5. Drop it down to your root directory, where you will will clone / pull all the files in that repo.
     6. Finally, just live your app on streamlit and start serving your app.
