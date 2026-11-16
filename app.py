@@ -45,7 +45,14 @@ def load_my_model():
         compile=False
     )
 
+def load_my_model2():
+    return tf.keras.models.load_model(
+        "ResNet.keras",
+        compile=False
+    )
+
 model = load_my_model()
+model2 = load_my_model2()
 
 class_names = ["Pepper__bell___Bacterial_spot", "Pepper__bell___healthy", 
                "Tomato_Bacterial_spot", "Tomato_Early_blight", "Tomato_Late_blight",
@@ -82,18 +89,34 @@ if camera_image is not None:
         # main model prediction [MOBILENETV2]
         pred = model.predict(image_arr, verbose=0).ravel()
         scores = pred[0]
+
+        # scratch model prediction [ResNet50]
+        pred_sc = model2.predict(image_arr, verbose=0).ravel()
+        scores_sc = pred[0]
         
         # results
-        st.subheader("Model Prediction: ")
+        st.subheader("Model Predictions: ")
         
         # decode
         k = int(np.argmax(pred))    # position of the largest number
         conf = float(pred[k])       # confidence
 
+        k1 = int(np.argmax(pred_sc))    # position of the largest number
+        conf1 = float(pred_sc[k1])       # confidence
+
+        st.subheader("TUNNED MOBILENET:- ")
+
         if conf < 0.7:
             st.warning(f"🤔 Uncertain (Best guess: {class_names[k]}, {conf:.0%}) ")
         else:
             st.info(f"{icons[k]} {class_names[k]} ({conf:.0%})")
+
+        st.subheader("RESNET-50 MODEL:- ")
+
+        if conf < 0.7:
+            st.warning(f"🤔 Uncertain (Best guess: {class_names[k1]}, {conf1:.0%}) ")
+        else:
+            st.info(f"{icons[k1]} {class_names[k1]} ({conf1:.0%})")
         
     else:
         st.error("[BLOCKED] Please provide leaf image!")
