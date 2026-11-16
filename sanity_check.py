@@ -17,7 +17,7 @@ def load_clip():
 # Load Hugging Face model
 clip = load_clip()
 
-def SanityCheck(image, threshold=0.6):
+def SanityCheck(image, threshold=0.7):
 
     labels=[
         "a close-up photograph of a plant leaf", 
@@ -31,7 +31,7 @@ def SanityCheck(image, threshold=0.6):
         if r["label"] == labels[0]
     )
 
-    if leaf_score >= threshold:
+    if leaf_score <= threshold:
         return 0
 
     return 1
