@@ -15,10 +15,10 @@ How To Use / Run it:
 
     1. Upload Datasets (Trainset.zip & Testset.zip) onto Google Drive.
     2. Name the folder Plant_Disease_Model and save both into it.
-    3. Then Copy / Paste code or upload 'main_model' file [find at /COLAB/] on google colab and run each cell sequentially.
+    3. Then Copy / Paste code or upload 'main_model' & 'ResNET_Scratch_Model' file [find at /COLAB/] on google colab and run each cell sequentially.
     5. You can run other files in COLAB folder, i.e sanity checker or un-tunned model 
-    4. When you run last cell of main_model file, you will get a 'plant_disease_model.keras'. 
-    5. Drop it down to your root directory, where you will will clone / pull all the files in that repo.
+    4. When you run last cell of main_model file, you will get a 'plant_disease_model.keras'. And similarly run ResNET_Scratch_Model file, and you will get ResNet.keras.'
+    5. Drop them down to your root directory, where you will will clone / pull all the files in that repo.
     6. Finally, just live your app on streamlit and start serving your app.
 
 Command to live / run the app: [streamlit run app.py]

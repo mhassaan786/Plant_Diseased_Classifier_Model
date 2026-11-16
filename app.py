@@ -23,7 +23,7 @@ disease it shows. It covers **12 conditions** across **tomato** and **bell peppe
 
 #### How it works
 - **Step 1, leaf check:** a pre-trained vision-language model (CLIP) rejects non-leaf images such as hands, objects and walls.
-- **Step 2, disease classifier:** a fine-tuned MobileNetV2 deep-learning model trained on thousands of leaf images.
+- **Step 2, disease classifier:** a fine-tuned MobileNetV2 and ResNet-50 deep-learning model trained on thousands of leaf images.
 - **Confidence:** if the model is not sure, it says **Uncertain** rather than guessing.
 
 #### Tips for a good photo
