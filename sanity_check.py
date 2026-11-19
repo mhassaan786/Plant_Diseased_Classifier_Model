@@ -17,7 +17,7 @@ def load_clip():
 # Load Hugging Face model
 clip = load_clip()
 
-def SanityCheck(image, threshold=0.7):
+def SanityCheck(image, threshold=0.65):
 
     labels=[
         "a close-up photograph of a plant leaf", 
